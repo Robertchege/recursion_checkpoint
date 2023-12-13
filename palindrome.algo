@@ -1,0 +1,34 @@
+ALGORITHM palindrome
+VAR
+    len, i, j: INTEGER                       //variable declaration
+    word: STRING
+
+BEGIN
+    
+    len := LENGTH(word)                         //initialising variables
+    i   := 1
+    j   := len
+
+    read(word);             
+
+    
+    IF len <= 1 THEN                               //  base class
+        RETURN TRUE
+    END IF
+
+    
+    WHILE (i <= j) AND (word[i] = word[j]) DO        // Set the recursive class
+        i := i + 1
+        j := j - 1
+    END WHILE
+
+    
+    IF i > j THEN                                  // If the loop is completed, it's a palindrome
+        RETURN TRUE
+    ELSE
+        RETURN FALSE
+    END IF
+
+    
+    OUTPUT: TRUE, FALSE                              // Output
+END
